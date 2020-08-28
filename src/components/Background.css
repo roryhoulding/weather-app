@@ -1,0 +1,105 @@
+/* Could replace this CSS file with CSS in JS styles based on
+an array of colours and ID as prop
+https://stackoverflow.com/questions/49709968/wants-to-change-the-color-of-div-in-react
+*/
+
+.bg {
+    position: fixed;
+    width: 100%;
+}
+
+.top, .middle {
+    height: 25vh;
+}
+
+.gradient .main {
+    height: 50vh;
+}
+
+.plain .main {
+    height: 100vh;
+}
+
+/* ---- Day sun ---- */
+
+.day-sun .top {
+    background: #FCD790;
+}
+
+.day-sun .middle {
+    background: #FFDB95;
+}
+
+.day-sun .main {
+    background: #FEDE9B;
+}
+
+/* ---- Day Blue ---- */
+
+.day-blue .top {
+    background: #BBD7E8;
+}
+
+.day-blue .middle {
+    background: #C1DAE3;
+}
+
+.day-blue .main {
+    background: #C5DCE4;
+}
+
+/* ---- Day Grey ---- */
+
+.day-grey .top {
+    background: #EBEBEB;
+}
+
+.day-grey .middle {
+    background: #F0F0F0;
+}
+
+.day-grey .main {
+    background: #F5F5F5;
+}
+
+/* ---- Night ---- */
+
+.night .top {
+    background: #161459;
+}
+
+.night .middle {
+    background: #1E1C62;
+}
+
+.night .main {
+    background: #212062;
+}
+
+/* ---- Night haze ---- */
+
+.night-haze .top {
+    background: #424079;
+}
+
+.night-haze .middle {
+    background: #484780;
+}
+
+.night-haze .main {
+    background: #4B4A80;
+}
+
+/* ---- Sunset ---- */
+
+.sunset .top {
+    background: #FF9671;
+}
+
+.sunset .middle {
+    background: #FB9E7D;
+}
+
+.sunset .main {
+    background: #F6A487;
+}

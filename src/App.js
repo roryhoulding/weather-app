@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import Info from './Info';
+import Info from './components/Info';
+import Background from './components/Background';
+import Graphic from './components/Graphic';
 
 function App() {
   const [weatherData, setWeather] = useState(undefined);
   const [locationData, setLocationData] = useState(undefined);
+  const [theme, setTheme] = useState('day-grey');
 
   const getLocation = async () => {
     const geoLocation = await new Promise((resolve, reject) => {
@@ -31,33 +34,26 @@ function App() {
       const coords = await getLocation();
       // const placeName = await getPlaceName(coords); getting name from weather
       const weatherResponse = await getWeatherData(coords);
-      const temp = weatherResponse.main.temp;
-      const description = weatherResponse.weather[0].description;
-      const weatherTypeId = weatherResponse.weather[0].id;
-      const weatherCoords = weatherResponse.coord;
-      const weatherData = {
-        temp,
-        description,
-        weatherTypeId,
-        weatherCoords,
-      }
-      const sunrise = weatherResponse.sys.sunrise;
-      const sunset = weatherResponse.sys.sunset;
-      const placeName = weatherResponse.name;
-      const locationData = {
-        placeName,
-        sunrise,
-        sunset,
+      setWeather({
+        temp: Math.round(weatherResponse.main.temp),
+        description: weatherResponse.weather[0].description,
+        weatherTypeId: weatherResponse.weather[0].id,
+        weatherCoords: weatherResponse.coord,
+      });
+      setLocationData({
+        placeName: weatherResponse.name,
+        sunrise: weatherResponse.sys.sunrise,
+        sunset: weatherResponse.sys.sunset,
         userCoords: coords,
-      }
-      setWeather(weatherData);
-      setLocationData(locationData);
+      });
     })();
   }, []);
 
   return (
-    <div className="App">
-        <Info weatherData={weatherData} locationData={locationData}/>
+    <div className='App'>
+      <Background type='gradient' theme={theme}/>
+      <Info weatherData={weatherData} locationData={locationData} theme={theme} textEffect={null}/>
+      <Graphic />
     </div>
   );
 }

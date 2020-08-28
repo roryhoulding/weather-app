@@ -1,0 +1,59 @@
+.Info {
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    bottom: 0;
+    padding: 40px;
+}
+
+.temp {
+    font-family: 'SF Mono Light', 'Courier New', Courier, monospace;
+    font-size: 72px;
+    margin-bottom: 4px;
+}
+
+.description {
+    margin-bottom: 4px;
+}
+
+/* ---- Text Effects ---- */
+
+.text-blur {
+    filter: blur(1.5px);
+}
+
+/* ---- Text colours ---- */
+
+.day-sun {
+    color: #D15822;
+}
+
+/* ---- Day Blue ---- */
+
+.day-blue {
+    color: #1B6187;
+}
+
+/* ---- Day Grey ---- */
+
+.day-grey {
+    color: #595959;
+}
+
+/* ---- Night ---- */
+
+.night {
+    color: #FFFFFF;
+}
+
+/* ---- Night haze ---- */
+
+.night-haze {
+    color: #FFFFFF;
+}
+
+/* ---- Sunset ---- */
+
+.sunset {
+    color: #FFFFFF;
+}
