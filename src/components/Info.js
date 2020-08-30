@@ -2,7 +2,6 @@ import React from 'react';
 import './Info.css';
 
 const Info = ({locationData, weatherData, theme, textEffect}) => {
-    console.log(weatherData);
     if (locationData && weatherData) {
         return (
             <section className={`Info ${theme} ${textEffect ? textEffect : ''}`}>

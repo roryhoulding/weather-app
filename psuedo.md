@@ -37,6 +37,16 @@ https://www.figma.com/file/DhJ3g5lQlRn77AoRO3vNBv/Weather?node-id=0%3A1
     - image
     - background (?)
 
+## Style
+- 3 components, background, image and info
+
+## Todo
+- Succesfully loading weather data and moon or sun image depending on theme
+- Next: work out how to do render += so can add more than one svg to the render
+    E.g. clouds 
+- Render different weather types given an id and a theme
+- Link up the background colour to the theme given theme and weather id
+
 ## Future improvements
 - Add a 'use my location' button in the middle of the screen and loading state
 - Add timeout to geolocation if it takes too long
