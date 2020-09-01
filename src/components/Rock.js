@@ -4,9 +4,9 @@ import { ReactComponent as Moon } from '../img/moon.svg';
 
 const Rock = ({ type }) => {
     if (type === "sun") {
-        return <Sun />
+        return <Sun className="Sun"/>
     } else if (type === "moon") {
-        return <Moon />
+        return <Moon className="Moon"/>
     }
 }
 

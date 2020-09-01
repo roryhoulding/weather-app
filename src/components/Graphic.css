@@ -3,5 +3,32 @@
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     position: fixed;
+}
+
+.Graphic > svg {
+    width: auto;
+    height: 100%;
+}
+
+.Clouds, .Precipitation {
+    grid-row: 1 / 4;
+    grid-column: 1 / span 12;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Clouds > svg, .Precipitation > svg {
+    height: 100%;
+    width: auto;
+}
+
+.Lightning {
+    grid-row: 3 / 5;
+    grid-column: -3 / span 2;
+}
+
+.Precipitation {
+    grid-row: 4 / 6;
 }

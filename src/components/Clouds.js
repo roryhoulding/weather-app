@@ -4,13 +4,20 @@ import { ReactComponent as TripleClouds } from '../img/clouds-3.svg';
 import { ReactComponent as ScatteredClouds } from '../img/clouds-scattered.svg';
 
 const Clouds = ({ num }) => {
+    let svg;
     if (num === 1) {
-        return <Cloud />
+        svg = <Cloud />
     } else if (num === 2) {
-        return <ScatteredClouds />
+        svg = <ScatteredClouds />
     } else if (num === 3) {
-        return <TripleClouds />
+        svg = <TripleClouds />
     }
+
+    return (
+        <div className="Clouds">
+            {svg}
+        </div>
+    )
 }
 
 export default Clouds;

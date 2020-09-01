@@ -22,84 +22,84 @@ https://stackoverflow.com/questions/49709968/wants-to-change-the-color-of-div-in
 
 /* ---- Day sun ---- */
 
-.day-sun .top {
+.yellow > .top {
     background: #FCD790;
 }
 
-.day-sun .middle {
+.yellow > .middle {
     background: #FFDB95;
 }
 
-.day-sun .main {
+.yellow > .main {
     background: #FEDE9B;
 }
 
-/* ---- Day Blue ---- */
+/* ---- Blue ---- */
 
-.day-blue .top {
+.blue > .top {
     background: #BBD7E8;
 }
 
-.day-blue .middle {
+.blue > .middle {
     background: #C1DAE3;
 }
 
-.day-blue .main {
+.blue > .main {
     background: #C5DCE4;
 }
 
 /* ---- Day Grey ---- */
 
-.day-grey .top {
+.grey > .top {
     background: #EBEBEB;
 }
 
-.day-grey .middle {
+.grey > .middle {
     background: #F0F0F0;
 }
 
-.day-grey .main {
+.grey > .main {
     background: #F5F5F5;
 }
 
 /* ---- Night ---- */
 
-.night .top {
+.purple > .top {
     background: #161459;
 }
 
-.night .middle {
+.purple > .middle {
     background: #1E1C62;
 }
 
-.night .main {
+.purple > .main {
     background: #212062;
 }
 
 /* ---- Night haze ---- */
 
-.night-haze .top {
+.purple-haze .top {
     background: #424079;
 }
 
-.night-haze .middle {
+.purple-haze .middle {
     background: #484780;
 }
 
-.night-haze .main {
+.purple-haze .main {
     background: #4B4A80;
 }
 
 /* ---- Sunset ---- */
 
-.sunset .top {
+.orange > .top {
     background: #FF9671;
 }
 
-.sunset .middle {
+.orange > .middle {
     background: #FB9E7D;
 }
 
-.sunset .main {
+.orange > .main {
     background: #F6A487;
 }

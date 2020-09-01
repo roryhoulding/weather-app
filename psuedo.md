@@ -41,11 +41,20 @@ https://www.figma.com/file/DhJ3g5lQlRn77AoRO3vNBv/Weather?node-id=0%3A1
 - 3 components, background, image and info
 
 ## Todo
-- Succesfully loading weather data and moon or sun image depending on theme
-- Next: work out how to do render += so can add more than one svg to the render
+- [x] Succesfully load weather data and moon or sun image depending on theme
+- [x] Render multiple parts of an image
+- [x] Next: work out how to do render += so can add more than one svg to the render
     E.g. clouds 
-- Render different weather types given an id and a theme
-- Link up the background colour to the theme given theme and weather id
+- [x] Render multiple parts of an image based on object properties
+- [ ] Redesign graphics based on a grid
+- [ ] Render different weather types given an id and a theme
+- [ ] Add a method to the object that holds all the data mappings?
+- [ ] CSS stylings for the parts of an image
+- [ ] Link up the background colour to the theme given theme and weather id
+
+## Bugs
+- [ ] CSS layout bug when rendering clouds where the SVG is wider than the screen
+- [ ] CSS layout bug where rain and clouds cut off on right hand side
 
 ## Future improvements
 - Add a 'use my location' button in the middle of the screen and loading state

@@ -1,6 +1,6 @@
 /*
 [weatherId]: {
-        clouds: 1 / 3 / 0 or undefined,
+        clouds: 1 / 2 / 3 / 0 or undefined, 1 is single, 2 is scatterd, 3 is tri ple
         precipitation: rain / drizzle / sleet / snow / or undefined, 
         lightning: 1 / 2 / 0 or undefined,
         rock: true / false or undefined
@@ -10,6 +10,9 @@
             sunset: 'orange'
         }
     },
+
+TODO 
+- [ ] Add a background type gradient or 
 */
 
 const renderData = {

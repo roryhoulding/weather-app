@@ -4,16 +4,23 @@ import { ReactComponent as Drizzle } from '../img/drizzle.svg';
 import { ReactComponent as Sleet } from '../img/sleet.svg';
 import { ReactComponent as Snow } from '../img/snow.svg';
 
-const Clouds = ({ type }) => {
+const Precipitation = ({ type }) => {
+    let svg;
     if (type === "rain") {
-        return <Rain />
+        svg = <Rain className="Precipitation"/>
     } else if (type === "drizzle") {
-        return <Drizzle />
+        svg = <Drizzle className="Precipitation"/>
     } else if (type === "sleet") {
-        return <Sleet />
+        svg = <Sleet className="Precipitation"/>
     } else if (type === "snow") {
-        return <Snow />
+        svg = <Snow className="Precipitation"/>
     }
+
+    return (
+        <div className="Precipitation">
+            {svg}
+        </div>
+    )
 }
 
-export default Clouds;
+export default Precipitation;
