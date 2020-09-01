@@ -31,10 +31,10 @@ function App() {
     const time = (new Date()).getTime();
     const timeFromSunset = time - parseInt(`${sunset}000`);
     if (timeFromSunset < -1800000) {
-      // 30 mins before sunset
+      // > 30 mins before sunset
       return 'day'
     } else if (timeFromSunset > 600000) {
-      // 10 mins after sunset
+      // > 10 mins after sunset
       return 'night'
     } else {
       // Between 30 mins before sunset and 10 after

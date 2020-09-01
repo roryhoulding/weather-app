@@ -1,35 +1,41 @@
 import React from 'react';
 import './Graphic.css';
 import renderData from './renderData.js';
-import { ReactComponent as Sun } from '../img/sun.svg';
-import { ReactComponent as Moon } from '../img/moon.svg';
+import Clouds from './Clouds';
+import Precipitation from './Precipitation';
+import Lightning from './Lightning';
+import Rock from './Rock';
 
 const Graphic = ({ weatherData, theme }) => {
     let data;
-    let render = '';
+    let render = [];
     if (weatherData) {
         // const weatherId = weatherData.id;
         // const data = renderData[weatherId];
         data = renderData[800];
-        // Clouds
+        if (data.clouds) {
+            render.push(<Clouds num={data.clouds} className="clouds"/>);
+        }
+        if (data.precipitation) {
+            render.push(<Precipitation type={data.precipitation} className="precipitation"/>);
+        }
+        if (data.lightning) {
+            render.push(<Lightning bolts={data.lightning} className="lightning"/>);
+        } 
+        // Rock
         if (data.rock) {
             if (theme === 'day' || theme === 'sunset') {
-                render = <Sun />
+                render.push(<Rock type="sun" className="sun"/>);
             } else {
-                render = <Moon />
+                render.push(<Rock type="moon" className="moon"/>);
             }
         }
-        // Precipitation
-
-        // Lightning
-
-        // Rock
     }
 
     console.log(render);
 
     return (
-        <div className='Grahpic'>
+        <div className='Graphic'>
             {render}
         </div>
     )
