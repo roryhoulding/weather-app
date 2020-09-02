@@ -1,31 +1,31 @@
 import React from 'react';
 import './Graphic.css';
-import renderData from './renderData.js';
 import Clouds from './Clouds';
 import Precipitation from './Precipitation';
 import Lightning from './Lightning';
 import Rock from './Rock';
+import getRenderData from '../helpers/getRenderData';
 
 const Graphic = ({ weatherData, theme }) => {
-    let data = weatherData ? weatherData : {};
     let graphicComponents = [];
-    // const weatherId = weatherData.id;
-    // const data = renderData[weatherId];
-    data = renderData[201];
-    if (data.clouds) {
-        graphicComponents.push(<Clouds num={data.clouds} className="clouds"/>);
-    }
-    if (data.precipitation) {
-        graphicComponents.push(<Precipitation type={data.precipitation}/>);
-    }
-    if (data.lightning) {
-        graphicComponents.push(<Lightning bolts={data.lightning}/>);
-    } 
-    if (data.rock) {
-        if (theme === 'day' || theme === 'sunset') {
-            graphicComponents.push(<Rock type="sun"/>);
-        } else if (theme === 'night') {
-            graphicComponents.push(<Rock type="moon" className="moon"/>);
+    if (weatherData) {
+        const weatherId = weatherData.id;
+        const renderData = getRenderData(weatherId);
+        if (renderData.clouds) {
+            graphicComponents.push(<Clouds num={renderData.clouds} className="clouds"/>);
+        }
+        if (renderData.precipitation) {
+            graphicComponents.push(<Precipitation type={renderData.precipitation}/>);
+        }
+        if (renderData.lightning) {
+            graphicComponents.push(<Lightning bolts={renderData.lightning}/>);
+        } 
+        if (renderData.rock) {
+            if (theme === 'day' || theme === 'sunset') {
+                graphicComponents.push(<Rock type="sun"/>);
+            } else if (theme === 'night') {
+                graphicComponents.push(<Rock type="moon" className="moon"/>);
+            }
         }
     }
 

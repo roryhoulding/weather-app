@@ -1,16 +1,13 @@
 import React from 'react';
 import './Background.css'
-import renderData from './renderData.js';
+import getRenderData from '../helpers/getRenderData';
 
 const Background = ({ type, theme, weatherData }) => {
-    let data = weatherData ? weatherData : {};
-    // const weatherId = weatherData.id;
-    // const data = renderData[weatherId];
-    data = renderData[201];
-
+    const weatherId = weatherData ? weatherData.id : 701;
+    const renderData = getRenderData(weatherId);
     if (type === 'gradient') {
         return (
-            <div className={`bg ${type} ${data.bg[theme]}`}>
+            <div className={`bg ${type} ${renderData.bg[theme]}`}>
                 <div className="top"></div>
                 <div className="middle"></div>
                 <div className="main"></div>

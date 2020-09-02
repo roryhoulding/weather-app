@@ -46,11 +46,16 @@ https://www.figma.com/file/DhJ3g5lQlRn77AoRO3vNBv/Weather?node-id=0%3A1
 - [x] Next: work out how to do render += so can add more than one svg to the render
     E.g. clouds 
 - [x] Render multiple parts of an image based on object properties
-- [ ] Redesign graphics based on a grid
+- [x] Redesign graphics based on a grid
 - [ ] Render different weather types given an id and a theme
-- [ ] Add a method to the object that holds all the data mappings?
+- [ ] Add a method to the object that holds all the data mappings and spits out the 
 - [ ] CSS stylings for the parts of an image
 - [ ] Link up the background colour to the theme given theme and weather id
+- [ ] Rock position so that sun is at bottom when it's sunset (probably just a class called sunset that changes position of rock)
+- [ ] Text color
+- [ ] Redo colours so that they are nicer (auto generate them?)
+- [ ] Create all renderData graphic combos
+- [ ] Is there a way to apply the same objet to multiple ID's? (to avoid repetition)
 
 ## Bugs
 - [ ] CSS layout bug when rendering clouds where the SVG is wider than the screen

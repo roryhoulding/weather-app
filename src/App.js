@@ -9,7 +9,7 @@ function App() {
   const [locationData, setLocationData] = useState(undefined);
   const [theme, setTheme] = useState(undefined);
 
-  const getLocation = async () => {
+  const getUserCoords = async () => {
     const geoLocation = await new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resolve, reject);
     });
@@ -42,12 +42,11 @@ function App() {
     } 
   }
 
-  // This contains the calls to getWeatherData and getLocation
+  // This contains the calls to getWeatherData and getUserCoords
   // The second parameter, empty array, ensures it does not loop endlessly 
   useEffect(() => {
     (async () => {
-      const coords = await getLocation();
-      // const placeName = await getPlaceName(coords); getting name from weather
+      const coords = await getUserCoords();
       const weatherData = await getWeatherData(coords);
       setWeatherData({
         temp: Math.round(weatherData.main.temp),
@@ -68,7 +67,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Background type='gradient' theme={theme}/>
+      <Background type='gradient' theme={theme} weatherData={weatherData}/>
       <Info weatherData={weatherData} locationData={locationData} theme={theme} textEffect={null}/>
       <Graphic theme={theme} weatherData={weatherData}/>
     </div>
