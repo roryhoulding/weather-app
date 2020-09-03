@@ -3,7 +3,7 @@ an array of colours and ID as prop
 https://stackoverflow.com/questions/49709968/wants-to-change-the-color-of-div-in-react
 */
 
-.bg {
+.Background {
     position: fixed;
     width: 100%;
 }
@@ -20,35 +20,35 @@ https://stackoverflow.com/questions/49709968/wants-to-change-the-color-of-div-in
     height: 100vh;
 }
 
-/* ---- Day sun ---- */
+/* ---- Yellow ---- */
 
 .yellow > .top {
-    background: #FCD790;
+    background: #FED789;
 }
 
 .yellow > .middle {
-    background: #FFDB95;
+    background: #FEDB95;
 }
 
 .yellow > .main {
-    background: #FEDE9B;
+    background: #FEDFA1;
 }
 
 /* ---- Blue ---- */
 
 .blue > .top {
-    background: #BBD7E8;
+    background: #B1D5E1;
 }
 
 .blue > .middle {
-    background: #C1DAE3;
+    background: #B9D9E4;
 }
 
 .blue > .main {
-    background: #C5DCE4;
+    background: #C1DDE7;
 }
 
-/* ---- Day Grey ---- */
+/* ---- Grey ---- */
 
 .grey > .top {
     background: #EBEBEB;
@@ -60,6 +60,12 @@ https://stackoverflow.com/questions/49709968/wants-to-change-the-color-of-div-in
 
 .grey > .main {
     background: #F5F5F5;
+}
+
+/* ---- Earth ---- */
+
+.earth > .main {
+    background: #F4E1D4;
 }
 
 /* ---- Night ---- */
@@ -102,4 +108,18 @@ https://stackoverflow.com/questions/49709968/wants-to-change-the-color-of-div-in
 
 .orange > .main {
     background: #F6A487;
+}
+
+/* ---- Sunset haze ---- */
+
+.orange-haze > .top {
+    background: #F5C0AE;
+}
+
+.orange-haze > .middle {
+    background: #F5C7B7;
+}
+
+.orange-haze > .main {
+    background: #F4CDBE;
 }

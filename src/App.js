@@ -3,11 +3,39 @@ import './App.css';
 import Info from './components/Info';
 import Background from './components/Background';
 import Graphic from './components/Graphic';
+import getGraphicData from './helpers/getGraphicData';
 
 function App() {
   const [weatherData, setWeatherData] = useState(undefined);
   const [locationData, setLocationData] = useState(undefined);
+  const [graphicData, setGraphicData] = useState(undefined);
   const [theme, setTheme] = useState(undefined);
+
+  // This contains the calls to getWeatherData and getUserCoords
+  // The second parameter, empty array, ensures it does not loop endlessly 
+  useEffect(() => {
+    (async () => {
+      const coords = await getUserCoords();
+      const rawWeatherData = await getWeatherData(coords);
+      setWeatherData({
+        temp: Math.round(rawWeatherData.main.temp),
+        description: rawWeatherData.weather[0].description,
+        id: rawWeatherData.weather[0].id,
+        weatherCoords: rawWeatherData.coord,
+      });
+      setLocationData({
+        placeName: rawWeatherData.name,
+        sunrise: rawWeatherData.sys.sunrise,
+        sunset: rawWeatherData.sys.sunset,
+        userCoords: coords,
+      });
+      const graphicData = getGraphicData(rawWeatherData.weather[0].id);
+      // const graphicData = getGraphicData(762);
+      setGraphicData(graphicData);
+      const theme = getTheme(rawWeatherData.sys.sunset);
+      setTheme(theme);
+    })();
+  }, []);
 
   const getUserCoords = async () => {
     const geoLocation = await new Promise((resolve, reject) => {
@@ -42,34 +70,11 @@ function App() {
     } 
   }
 
-  // This contains the calls to getWeatherData and getUserCoords
-  // The second parameter, empty array, ensures it does not loop endlessly 
-  useEffect(() => {
-    (async () => {
-      const coords = await getUserCoords();
-      const weatherData = await getWeatherData(coords);
-      setWeatherData({
-        temp: Math.round(weatherData.main.temp),
-        description: weatherData.weather[0].description,
-        id: weatherData.weather[0].id,
-        weatherCoords: weatherData.coord,
-      });
-      setLocationData({
-        placeName: weatherData.name,
-        sunrise: weatherData.sys.sunrise,
-        sunset: weatherData.sys.sunset,
-        userCoords: coords,
-      });
-      const theme = getTheme(weatherData.sys.sunset);
-      setTheme(theme);
-    })();
-  }, []);
-
   return (
     <div className='App'>
-      <Background type='gradient' theme={theme} weatherData={weatherData}/>
-      <Info weatherData={weatherData} locationData={locationData} theme={theme} textEffect={null}/>
-      <Graphic theme={theme} weatherData={weatherData}/>
+      <Background theme={theme} graphicData={graphicData}/>
+      <Info theme={theme} weatherData={weatherData} locationData={locationData} graphicData={graphicData}/>
+      <Graphic theme={theme} graphicData={graphicData}/>
     </div>
   );
 }

@@ -7,6 +7,10 @@
 - Then worrying about bugs and error handling
 
 
+- Manually typed out (and redirect) graphic render objects data
+- Refactored graphic data to be on app level state so that i can pass it down to background, graphic and text
+
+
 - Considering how to set up rendering of different backgrounds:
     - Could set up with css file and styles with colurs coded in CSS
     - Or could set up with array of css settings then use CSS in JS

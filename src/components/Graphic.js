@@ -4,29 +4,35 @@ import Clouds from './Clouds';
 import Precipitation from './Precipitation';
 import Lightning from './Lightning';
 import Rock from './Rock';
-import getRenderData from '../helpers/getRenderData';
+import SpecialImg from './SpecialImg';
 
-const Graphic = ({ weatherData, theme }) => {
+const Graphic = ({ graphicData, theme }) => {
     let graphicComponents = [];
-    if (weatherData) {
-        const weatherId = weatherData.id;
-        const renderData = getRenderData(weatherId);
-        if (renderData.clouds) {
-            graphicComponents.push(<Clouds num={renderData.clouds} className="clouds"/>);
+    // Ensures that this is only run once the weather data has been fetched
+    // and the graphic data calculated
+    if (graphicData) {
+        if (graphicData.clouds) {
+            graphicComponents.push(<Clouds num={graphicData.clouds} className="clouds"/>);
         }
-        if (renderData.precipitation) {
-            graphicComponents.push(<Precipitation type={renderData.precipitation}/>);
+        if (graphicData.precipitation) {
+            graphicComponents.push(<Precipitation type={graphicData.precipitation}/>);
         }
-        if (renderData.lightning) {
-            graphicComponents.push(<Lightning bolts={renderData.lightning}/>);
+        if (graphicData.lightning) {
+            graphicComponents.push(<Lightning bolts={graphicData.lightning}/>);
         } 
-        if (renderData.rock) {
+        if (graphicData.rock) {
             if (theme === 'day' || theme === 'sunset') {
-                graphicComponents.push(<Rock type="sun"/>);
+                graphicComponents.push(<Rock type="sun" theme={theme}/>);
             } else if (theme === 'night') {
-                graphicComponents.push(<Rock type="moon" className="moon"/>);
+                graphicComponents.push(<Rock type="moon"/>);
             }
         }
+        if (graphicData.specialImg) {
+            console.log(graphicData.specialImg);
+            graphicComponents.push(<SpecialImg type={graphicData.specialImg}/>);
+        }
+        console.log(graphicData);
+        console.log(graphicComponents);
     }
 
     return (

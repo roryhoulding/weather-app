@@ -16,44 +16,53 @@
     margin-bottom: 4px;
 }
 
-/* ---- Text Effects ---- */
+/* ---- Text blur ---- */
 
 .text-blur {
     filter: blur(1.5px);
 }
 
+/* ---- Text whoosh ---- */
+
+.text-whoosh > .description > span {
+    display: inline-flex;
+    margin-right: 2px;
+}
+
+.text-whoosh > .description > span:nth-child(4n+0) {
+    transform: rotate(11deg) translateY(-3px);
+}
+
+.text-whoosh > .description > span:nth-child(4n+1) {
+    transform: rotate(-10deg) translateY(2px);
+}
+
+.text-whoosh > .description > span:nth-child(4n+2) {
+    transform: rotate(8deg) translateY(5px);
+}
+
+.text-whoosh > .description > span:nth-child(4n+3) {
+    transform: rotate(4deg) translateY(1px);
+}
+
 /* ---- Text colours ---- */
 
-.day-sun {
+.Info.text-orange {
     color: #D15822;
 }
 
-/* ---- Day Blue ---- */
-
-.day-blue {
+.Info.text-blue {
     color: #1B6187;
 }
 
-/* ---- Day Grey ---- */
+.Info.text-brown {
+    color: #AE7B62;
+}
 
-.day-grey {
+.Info.text-grey {
     color: #595959;
 }
 
-/* ---- Night ---- */
-
-.night {
-    color: #FFFFFF;
-}
-
-/* ---- Night haze ---- */
-
-.night-haze {
-    color: #FFFFFF;
-}
-
-/* ---- Sunset ---- */
-
-.sunset {
+.Info.text-white {
     color: #FFFFFF;
 }
