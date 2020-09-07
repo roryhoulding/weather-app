@@ -30,7 +30,7 @@ function App() {
         userCoords: coords,
       });
       const graphicData = getGraphicData(rawWeatherData.weather[0].id);
-      // const graphicData = getGraphicData(762);
+      // const graphicData = getGraphicData(781); // Tornado
       setGraphicData(graphicData);
       const theme = getTheme(rawWeatherData.sys.sunset);
       setTheme(theme);

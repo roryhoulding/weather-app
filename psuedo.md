@@ -58,9 +58,11 @@ https://www.figma.com/file/DhJ3g5lQlRn77AoRO3vNBv/Weather?node-id=0%3A1
 - [x] Redo colours so that they are nicer (programatically generate them?)
 - [x] Update all graphicData.js to include text and background properties
 - [x] Is there a way to apply the same objet to multiple ID's? (to avoid repetition)
-- [ ] Add a method to the object that holds all the data mappings and spits out the 
 - [x] Set graphic data back to auto determined (not hard coded)
+- [x] Capitalise the first letter of the description
 - [ ] Make SVGs editable so that i can change the color of Tornado for day/night/sunset and make volcano full width
+- [ ] Error handling for API (learn about this too)
+- [ ] Timeout to geolocation error
 
 ## Bugs
 - [ ] CSS layout bug when rendering clouds where the SVG is wider than the screen
@@ -70,8 +72,6 @@ https://www.figma.com/file/DhJ3g5lQlRn77AoRO3vNBv/Weather?node-id=0%3A1
 
 ## Future improvements
 - Add a 'use my location' button in the middle of the screen and loading state
-- Add timeout to geolocation if it takes too long
-- Error handling
 - How to not have a flash when loading state for first time
 - Write custom descriptions
 - Allow users to search for an area
