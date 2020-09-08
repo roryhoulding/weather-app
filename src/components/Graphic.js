@@ -8,31 +8,24 @@ import SpecialImg from './SpecialImg';
 
 const Graphic = ({ graphicData, theme }) => {
     let graphicComponents = [];
-    // Ensures that this is only run once the weather data has been fetched
-    // and the graphic data calculated
-    if (graphicData) {
-        if (graphicData.clouds) {
-            graphicComponents.push(<Clouds num={graphicData.clouds} className="clouds"/>);
+    if (graphicData.clouds) {
+        graphicComponents.push(<Clouds num={graphicData.clouds} className="clouds"/>);
+    }
+    if (graphicData.precipitation) {
+        graphicComponents.push(<Precipitation type={graphicData.precipitation}/>);
+    }
+    if (graphicData.lightning) {
+        graphicComponents.push(<Lightning bolts={graphicData.lightning}/>);
+    } 
+    if (graphicData.rock) {
+        if (theme === 'day' || theme === 'sunset') {
+            graphicComponents.push(<Rock type="sun" theme={theme}/>);
+        } else if (theme === 'night') {
+            graphicComponents.push(<Rock type="moon"/>);
         }
-        if (graphicData.precipitation) {
-            graphicComponents.push(<Precipitation type={graphicData.precipitation}/>);
-        }
-        if (graphicData.lightning) {
-            graphicComponents.push(<Lightning bolts={graphicData.lightning}/>);
-        } 
-        if (graphicData.rock) {
-            if (theme === 'day' || theme === 'sunset') {
-                graphicComponents.push(<Rock type="sun" theme={theme}/>);
-            } else if (theme === 'night') {
-                graphicComponents.push(<Rock type="moon"/>);
-            }
-        }
-        if (graphicData.specialImg) {
-            console.log(graphicData.specialImg);
-            graphicComponents.push(<SpecialImg type={graphicData.specialImg}/>);
-        }
-        console.log(graphicData);
-        console.log(graphicComponents);
+    }
+    if (graphicData.specialImg) {
+        graphicComponents.push(<SpecialImg type={graphicData.specialImg}/>);
     }
 
     return (

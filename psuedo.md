@@ -77,3 +77,13 @@ https://www.figma.com/file/DhJ3g5lQlRn77AoRO3vNBv/Weather?node-id=0%3A1
 - Allow users to search for an area
 - Have multiple different images as the sun goes down/comes up (rather than just one)
 - Use React Native to deploy mobile app
+
+## Log errors
+- [x] Weather type not found in graphic data
+    - [x] Not really an error, just don't show a graphic
+    - [x] Do show temp, location, description and blue background (default)
+- [x] Couldn't get user location or co-ordinates
+~~- [ ] Taking too long to get a response from the API~~
+- [x] Error from weather API
+
+## Display error to user

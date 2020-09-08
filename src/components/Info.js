@@ -17,25 +17,17 @@ const Info = ({theme, locationData, weatherData, graphicData}) => {
         return str.slice(0,1).toUpperCase() + str.slice(1);
     }
 
-    if (locationData && weatherData && graphicData) {
-        const textEffect = graphicData.text.effect;
-        let description = toSentenceCase(weatherData.description);
-        description = textEffect === 'whoosh' ? createWhoosh(description) : description;
-        const textColor = graphicData.text.color[theme];
-        return (
-            <section className={`Info ${textEffect ? `text-${textEffect}` : ''} text-${textColor}`}>
-                <h1 className='temp'>{weatherData.temp}°</h1>
-                <p className='description'>{description}</p>
-                <p className='place'>{locationData.placeName}</p>
-            </section>
-        )
-    } else {
-        return (
-            <>
-                <h1>Loading...</h1>
-            </>
-        )
-    }
+    const textEffect = graphicData.text.effect;
+    let description = toSentenceCase(weatherData.description);
+    description = textEffect === 'whoosh' ? createWhoosh(description) : description;
+    const textColor = graphicData.text.color[theme];
+    return (
+        <section className={`Info ${textEffect ? `text-${textEffect}` : ''} text-${textColor}`}>
+            <h1 className='temp'>{weatherData.temp}°</h1>
+            <p className='description'>{description}</p>
+            <p className='place'>{locationData.placeName}</p>
+        </section>
+    )
 }
 
 export default Info;

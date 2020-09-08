@@ -24,6 +24,8 @@
     },
 */
 
+// Could use strings for names instead?
+
 const renderData = {
     200: {
         clouds: 3,
@@ -472,6 +474,28 @@ const renderData = {
     },
     804: {
         redirect: 803,
+    },
+    999: { // default
+        clouds: 0,
+        precipitation: null, 
+        lightning: 0,
+        rock: false,
+        text: {
+            effect: null,
+            color: {
+                day: 'blue',
+                night: 'white',
+                sunset: 'white',
+            }
+        },
+        bg: {
+            type: 'gradient',
+            color: {
+                day: 'blue',
+                night: 'purple',
+                sunset: 'orange',
+            },
+        },
     },
 }
 

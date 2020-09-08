@@ -15,44 +15,50 @@ function App() {
   // The second parameter, empty array, ensures it does not loop endlessly 
   useEffect(() => {
     (async () => {
-      const coords = await getUserCoords();
-      const rawWeatherData = await getWeatherData(coords);
-      setWeatherData({
-        temp: Math.round(rawWeatherData.main.temp),
-        description: rawWeatherData.weather[0].description,
-        id: rawWeatherData.weather[0].id,
-        weatherCoords: rawWeatherData.coord,
-      });
-      setLocationData({
-        placeName: rawWeatherData.name,
-        sunrise: rawWeatherData.sys.sunrise,
-        sunset: rawWeatherData.sys.sunset,
-        userCoords: coords,
-      });
-      const graphicData = getGraphicData(rawWeatherData.weather[0].id);
-      // const graphicData = getGraphicData(781); // Tornado
-      setGraphicData(graphicData);
-      const theme = getTheme(rawWeatherData.sys.sunset);
-      setTheme(theme);
+      try {
+        const coords = await getUserCoords();
+        const rawWeatherData = await getWeatherData(coords);
+        setWeatherData({
+          temp: Math.round(rawWeatherData.main.temp),
+          description: rawWeatherData.weather[0].description,
+          id: rawWeatherData.weather[0].id,
+          weatherCoords: rawWeatherData.coord,
+        });
+        setLocationData({
+          placeName: rawWeatherData.name,
+          sunrise: rawWeatherData.sys.sunrise,
+          sunset: rawWeatherData.sys.sunset,
+          userCoords: coords,
+        });
+        const graphicData = getGraphicData(rawWeatherData.weather[0].id);
+        // const graphicData = getGraphicData(723489); // Tornado
+        setGraphicData(graphicData);
+        const theme = getTheme(rawWeatherData.sys.sunset);
+        setTheme(theme);
+      } catch(e) {
+        console.log(e);
+        // how to render the error on the screen?
+      }
     })();
   }, []);
 
   const getUserCoords = async () => {
-    const geoLocation = await new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(resolve, reject);
-    });
-    const coords = {
-      lat: geoLocation.coords.latitude,
-      lng: geoLocation.coords.longitude,
-    }
-    //setLocation(coords)
-    return coords;
+      const geoLocation = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+      });
+      const coords = {
+        lat: geoLocation.coords.latitude,
+        lng: geoLocation.coords.longitude,
+      }
+      return coords;
   }
   
   const getWeatherData = async (coords) => {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lng}&appid=78a6f0b5063156d4999c4ecb12d3b6af&units=metric`)
-    const data = await response.json();
-    return data;
+      // const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=100000&lon=0949832&appid=78a6f0b5063156d4999c4ecb12d3b6af&units=metric`);
+      const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lng}&appid=78a6f0b5063156d4999c4ecb12d3b6af&units=metric`);
+      if (!response.ok) throw new Error(`Couldn't get weather data`);
+      const data = await response.json();
+      return data;
   }
 
   const getTheme = (sunset) => {
@@ -70,13 +76,23 @@ function App() {
     } 
   }
 
-  return (
+  const weatherUI = (
     <div className='App'>
       <Background theme={theme} graphicData={graphicData}/>
       <Info theme={theme} weatherData={weatherData} locationData={locationData} graphicData={graphicData}/>
       <Graphic theme={theme} graphicData={graphicData}/>
     </div>
-  );
+  )
+
+  const loadingUI = (
+    <div className='App'>
+      Loading...
+    </div>
+  )
+
+  return (locationData && weatherData && graphicData && theme) ?
+    weatherUI : loadingUI
+
 }
 
 export default App;
