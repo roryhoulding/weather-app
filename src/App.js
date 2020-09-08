@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Info from './components/Info';
 import Background from './components/Background';
+import Loading from './components/Loading';
 import Graphic from './components/Graphic';
 import getGraphicData from './helpers/getGraphicData';
+
 
 function App() {
   const [weatherData, setWeatherData] = useState(undefined);
@@ -31,13 +33,13 @@ function App() {
           userCoords: coords,
         });
         const graphicData = getGraphicData(rawWeatherData.weather[0].id);
-        // const graphicData = getGraphicData(723489); // Tornado
+        // const graphicData = getGraphicData(803); 
         setGraphicData(graphicData);
         const theme = getTheme(rawWeatherData.sys.sunset);
         setTheme(theme);
       } catch(e) {
         console.log(e);
-        // how to render the error on the screen?
+        // how to render the error on the screen to user?
       }
     })();
   }, []);
@@ -54,7 +56,6 @@ function App() {
   }
   
   const getWeatherData = async (coords) => {
-      // const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=100000&lon=0949832&appid=78a6f0b5063156d4999c4ecb12d3b6af&units=metric`);
       const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lng}&appid=78a6f0b5063156d4999c4ecb12d3b6af&units=metric`);
       if (!response.ok) throw new Error(`Couldn't get weather data`);
       const data = await response.json();
@@ -86,7 +87,7 @@ function App() {
 
   const loadingUI = (
     <div className='App'>
-      Loading...
+      <Loading />
     </div>
   )
 

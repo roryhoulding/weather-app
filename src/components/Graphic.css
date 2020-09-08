@@ -9,40 +9,66 @@
 
 .Graphic > svg {
     width: auto;
-    height: 100%;
 }
 
-.Clouds, .Precipitation {
-    grid-row: 1 / 4;
-    grid-column: 1 / span 12;
-    display: flex;
-    justify-content: flex-end;
+.Clouds-1, .Clouds-2, .Clouds-3 {
+    grid-row: 1 / 5;
+    grid-column: 12;
     z-index: 1;
+    justify-self: end;
+    align-self: end;
 }
 
-.Clouds > svg, .Precipitation > svg {
+.Clouds-2 {
     height: 100%;
-    width: auto;
+    transform: translateX(10%);
 }
 
-.Lightning {
-    grid-row: 3 / 5;
-    grid-column: -3 / span 2;
-    z-index: 2;
+.Clouds-3 {
+    height: 120%;
+    transform: translate(40%, 0);
 }
 
 .Precipitation {
-    grid-row: 4 / 6;
+    height: 100%;
+    z-index: 1;
+    grid-row: 5 / 8;
+    grid-column: 12;
+    justify-self: end;
+    align-self: end;
+}
+
+.Lightning {
+    height: 100%;
+    grid-row: 3 / 7;
+    grid-column: 12;
+    justify-self: end;
+    z-index: 2;
+    transform: translateX(-16px);
 }
 
 .Sun.day {
-    grid-row: 1 / 3;
-    grid-column: 10;
+    grid-row: 1 / span 4;
+    grid-column: 12;
+    justify-self: end;
+    transform: translate(40%, -40%);
 }
 
 .Sun.sunset {
-    grid-row: -3 / -1;
-    grid-column: 10;
+    grid-row: 9 / span 4;
+    grid-column: 12;
+    justify-self: end;
+    transform: translate(40%, 40%);
+}
+
+.Moon {
+    grid-row: 2 / span 2;
+    grid-column: 11;
+    justify-self: end;
+}
+
+.Sun.sunset > circle {
+    fill: #F1787B;
 }
 
 svg.tornado {
@@ -53,6 +79,7 @@ svg.tornado {
 
 svg.volcano {
     grid-row: 1 / -1;
-    grid-column-start: 13;
+    grid-column-start: 12;
     justify-self: end;
+    height: 100%;
 }

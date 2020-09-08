@@ -6,17 +6,17 @@ import { ReactComponent as ScatteredClouds } from '../img/clouds-scattered.svg';
 const Clouds = ({ num }) => {
     let svg;
     if (num === 1) {
-        svg = <Cloud />
+        svg = <Cloud className="Clouds-1"/>
     } else if (num === 2) {
-        svg = <ScatteredClouds />
+        svg = <ScatteredClouds className="Clouds-2"/>
     } else if (num === 3) {
-        svg = <TripleClouds />
+        svg = <TripleClouds className="Clouds-3"/>
     }
 
     return (
-        <div className="Clouds">
+        <>
             {svg}
-        </div>
+        </>
     )
 }
 

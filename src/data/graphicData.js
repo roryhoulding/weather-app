@@ -432,7 +432,7 @@ const renderData = {
         clouds: 2,
         precipitation: null, 
         lightning: 0,
-        rock: true,
+        rock: false,
         text: {
             effect: null,
             color: {

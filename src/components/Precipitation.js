@@ -17,9 +17,9 @@ const Precipitation = ({ type }) => {
     }
 
     return (
-        <div className="Precipitation">
+        <>
             {svg}
-        </div>
+        </>
     )
 }
 

@@ -1,15 +1,15 @@
 <svg width="249" height="168" viewBox="0 0 249 168" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="83" cy="23" r="9" fill="white"/>
-<circle cx="131" cy="99" r="9" fill="white"/>
-<circle cx="74" cy="68" r="9" fill="white"/>
-<circle cx="24" cy="82" r="9" fill="white"/>
-<circle cx="149" cy="14" r="9" fill="white"/>
-<circle cx="188" cy="23" r="9" fill="white"/>
-<circle cx="197" cy="59" r="9" fill="white"/>
-<circle cx="158" cy="68" r="9" fill="white"/>
-<line x1="55.8133" y1="93.3537" x2="46.8133" y2="125.354" stroke="white" stroke-width="10"/>
-<line x1="124.813" y1="42.3537" x2="115.813" y2="74.3537" stroke="white" stroke-width="10"/>
-<line x1="240.813" y1="7.35373" x2="231.813" y2="39.3537" stroke="white" stroke-width="10"/>
-<line x1="210.813" y1="101.354" x2="201.813" y2="133.354" stroke="white" stroke-width="10"/>
-<line x1="32.8133" y1="6.35373" x2="23.8133" y2="38.3537" stroke="white" stroke-width="10"/>
+<circle cx="82" cy="31" r="9" fill="white"/>
+<circle cx="130" cy="110" r="9" fill="white"/>
+<circle cx="73" cy="79" r="9" fill="white"/>
+<circle cx="23" cy="93" r="9" fill="white"/>
+<circle cx="144" cy="16" r="9" fill="white"/>
+<circle cx="187" cy="34" r="9" fill="white"/>
+<circle cx="196" cy="70" r="9" fill="white"/>
+<circle cx="157" cy="79" r="9" fill="white"/>
+<line x1="54.8133" y1="104.354" x2="45.8133" y2="136.354" stroke="white" stroke-width="10"/>
+<line x1="123.813" y1="45.3537" x2="114.813" y2="77.3537" stroke="white" stroke-width="10"/>
+<line x1="239.813" y1="18.3537" x2="230.813" y2="50.3537" stroke="white" stroke-width="10"/>
+<line x1="209.813" y1="112.354" x2="200.813" y2="144.354" stroke="white" stroke-width="10"/>
+<line x1="31.8133" y1="12.3537" x2="22.8133" y2="44.3537" stroke="white" stroke-width="10"/>
 </svg>
