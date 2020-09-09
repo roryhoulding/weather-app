@@ -24,12 +24,9 @@ function App() {
           temp: Math.round(rawWeatherData.main.temp),
           description: rawWeatherData.weather[0].description,
           id: rawWeatherData.weather[0].id,
-          weatherCoords: rawWeatherData.coord,
         });
         setLocationData({
           placeName: rawWeatherData.name,
-          sunrise: rawWeatherData.sys.sunrise,
-          sunset: rawWeatherData.sys.sunset,
           userCoords: coords,
         });
         const graphicData = getGraphicData(rawWeatherData.weather[0].id);
