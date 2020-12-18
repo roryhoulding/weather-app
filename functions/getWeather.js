@@ -1,6 +1,6 @@
 exports.handler = async event => {
   return {
     status: 200,
-    body: env.WEATHER_APP_ID,
+    body: process.env.WEATHER_APP_ID,
   }
 }
