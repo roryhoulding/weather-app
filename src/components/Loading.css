@@ -9,11 +9,17 @@
   color: #90929B;
 }
 
+/* Adjust so sits visually just above the centre */
+.Loading > .clouds, 
+.Loading > p {
+  transform: translateY(-20px);
+}
+
 .clouds {
   width: 240px;
   height: 135px;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .clouds > svg {
@@ -36,6 +42,8 @@
   left: 50px;
   animation: svg1 2.2s ease-in-out 0s infinite alternate;
 }
+
+/* Cloud animations */
 
 @keyframes svg3 {
   from {
