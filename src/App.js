@@ -53,10 +53,15 @@ function App() {
   }
   
   const getWeatherData = async (coords) => {
+    try {
       const response = await fetch(`/.netlify/functions/getWeather?lat=${coords.lat}&lon=${coords.lng}`);
       if (!response.ok) throw new Error(`Couldn't get weather data`);
       const data = await response.json();
       return data;
+    } catch(err) {
+      console.log(err);
+      // How to render error to user on screen?
+    }
   }
 
   const getTheme = (sunset) => {
