@@ -6,8 +6,6 @@ import Lightning from './Lightning';
 import Rock from './Rock';
 import SpecialImg from './SpecialImg';
 
-var hello = "hello";
-
 const Graphic = ({ graphicData, theme }) => {
     let graphicComponents = [];
     if (graphicData.clouds) {
