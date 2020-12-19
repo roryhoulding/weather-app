@@ -16,7 +16,7 @@ See it in action -> [whats-with-the-weather.netlify.app](http://whats-with-the-w
 The ID in the Weather API response is used to generate a graphic.
 ![Example response, highlighting the weather ID](./README/id-in-response.png)
 
-The weather ID is used to lookup an object in a [harcoded file](./src/data/graphicData.js). This object contains information about which react components to render depending on the time of day and the weather ID. This meant I needed only 15 assets to render all of the 50+ variations. 
+The weather ID is used to lookup an object in a [harcoded file](./src/data/graphicData.js). This object contains information about which react components to render depending on the time of day and the weather ID. This meant I needed only 15 assets to render all of the 50+ variations.
 ![Examples of the weather graphic data](./README/data.png)
 
 Example of the same weather ID at different times of the day:
@@ -25,6 +25,6 @@ Example of the same weather ID at different times of the day:
 All of the assets:
 ![All of the graphic assets](./README/assets.png)
 
-The graphic is generated based on a 12x12 grid, with each component always rendering in the same location if it is rendered. 
+The graphic is generated based on a 12x12 grid, with each component always rendering in the same location if it is rendered.
 ![Example of grid at sunset](./README/sunset-example.png)
 ![Example of grid at night](./README/moon-example.png)
