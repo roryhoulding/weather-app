@@ -18,8 +18,12 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
+        console.log('get coords');
         const coords = await getUserCoords();
+        console.log('coords');
+        console.log('get weather');
         const rawWeatherData = await getWeatherData(coords);
+        console.log('weather');
         setWeatherData({
           temp: Math.round(rawWeatherData.main.temp),
           description: rawWeatherData.weather[0].description,

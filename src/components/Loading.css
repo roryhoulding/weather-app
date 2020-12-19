@@ -1,0 +1,71 @@
+.Loading {
+  width: 100%;
+  height: 100%;
+  background-color: #292D3E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.clouds {
+  width: 240px;
+  height: 135px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.clouds > svg {
+  position: absolute;
+}
+
+.clouds > svg:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  animation: svg3 1.8s ease-in-out 0s infinite alternate;
+}
+
+.clouds > svg:nth-child(2) {
+  right: 0;
+  top: 20px;
+  animation: svg2 2s ease-in-out 0s infinite alternate;
+}
+
+.clouds > svg:nth-child(1) {
+  left: 50px;
+  animation: svg1 2.2s ease-in-out 0s infinite alternate;
+}
+
+@keyframes svg3 {
+  from {
+    bottom: 0;
+    left: 0;
+  }
+  to {
+    bottom: -10px;
+    left: -20px;
+  }
+}
+
+@keyframes svg2 {
+  from {
+    top: 20px;
+    right: 0;
+  }
+  to {
+    top: 20px;
+    right: -20px;
+  }
+}
+
+@keyframes svg1 {
+  from {
+    top: 0;
+    left: 50px;
+  }
+  to {
+    top: -20px;
+    left: 50px;
+  }
+}
