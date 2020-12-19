@@ -12,18 +12,21 @@ function App() {
   const [locationData, setLocationData] = useState(undefined);
   const [graphicData, setGraphicData] = useState(undefined);
   const [theme, setTheme] = useState(undefined);
+  const [minLoadingTimeDone, setMinLoadingTimeDone] = useState(false);
 
   // This contains the calls to getWeatherData and getUserCoords
   // The second parameter, empty array, ensures it does not loop endlessly 
   useEffect(() => {
     (async () => {
+      // Show the loading UI for a minimum of X seconds
+      setTimeout(() => setMinLoadingTimeDone(true), 2000);
+
+      // Fetch data
       try {
-        console.log('get coords');
+        // Get the user location first
         const coords = await getUserCoords();
-        console.log('coords');
-        console.log('get weather');
+        // Use the user location to fetch the weather
         const rawWeatherData = await getWeatherData(coords);
-        console.log('weather');
         setWeatherData({
           temp: Math.round(rawWeatherData.main.temp),
           description: rawWeatherData.weather[0].description,
@@ -97,7 +100,7 @@ function App() {
     </div>
   )
 
-  return (locationData && weatherData && graphicData && theme) ?
+  return (locationData && weatherData && graphicData && theme && minLoadingTimeDone) ?
     weatherUI : loadingUI
 
 }
