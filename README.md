@@ -4,3 +4,5 @@
 ![Examples of the weather graphic data](./README/data.png)
 ![Examples of the modular assets](./README/themes.png)
 ![All of the graphic assets](./README/assets.png)
+![Example of grid at sunset](./README/sunset-example.png)
+![Example of grid at night](./README/moon-example.png)
