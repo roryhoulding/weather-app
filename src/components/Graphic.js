@@ -11,23 +11,23 @@ var hello = "hello";
 const Graphic = ({ graphicData, theme }) => {
     let graphicComponents = [];
     if (graphicData.clouds) {
-        graphicComponents.push(<Clouds num={graphicData.clouds} className="clouds"/>);
+        graphicComponents.push(<Clouds key={graphicComponents.length} num={graphicData.clouds} className="clouds"/>);
     }
     if (graphicData.precipitation) {
-        graphicComponents.push(<Precipitation type={graphicData.precipitation}/>);
+        graphicComponents.push(<Precipitation key={graphicComponents.length} type={graphicData.precipitation}/>);
     }
     if (graphicData.lightning) {
-        graphicComponents.push(<Lightning bolts={graphicData.lightning}/>);
+        graphicComponents.push(<Lightning key={graphicComponents.length} bolts={graphicData.lightning}/>);
     } 
     if (graphicData.rock) {
         if (theme === 'day' || theme === 'sunset') {
-            graphicComponents.push(<Rock type="sun" theme={theme}/>);
+            graphicComponents.push(<Rock key={graphicComponents.length} type="sun" theme={theme}/>);
         } else if (theme === 'night') {
-            graphicComponents.push(<Rock type="moon"/>);
+            graphicComponents.push(<Rock key={graphicComponents.length} type="moon"/>);
         }
     }
     if (graphicData.specialImg) {
-        graphicComponents.push(<SpecialImg type={graphicData.specialImg}/>);
+        graphicComponents.push(<SpecialImg key={graphicComponents.length} type={graphicData.specialImg}/>);
     }
 
     return (
