@@ -7,3 +7,4 @@
 ![Example of grid at sunset](./README/sunset-example.png)
 ![Example of grid at night](./README/moon-example.png)
 ![Example showing different renderings depending on the time of day](./README/time-of-day-example.png)
+![Example response, highlighting the weather ID](./README/id-in-response.png)
