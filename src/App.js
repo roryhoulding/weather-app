@@ -53,7 +53,7 @@ function App() {
   }
   
   const getWeatherData = async (coords) => {
-      const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lng}&appid=78a6f0b5063156d4999c4ecb12d3b6af&units=metric`);
+      const response = await fetch(`/.netlify/functions/getWeather?lat=${coords.lat}&lon=${coords.lng}`);
       if (!response.ok) throw new Error(`Couldn't get weather data`);
       const data = await response.json();
       return data;
