@@ -2,7 +2,7 @@
 
 ![Four examples of the app](./README/header.png)
 
-What's with the weather is a tiny app I made whilst learning React.
+What's with the weather is a tiny app I made whilst learning React. I used create-react-app, hence a few unnecessary files.
 
 See it in action -> [whats-with-the-weather.netlify.app](http://whats-with-the-weather.netlify.app/)
 
