@@ -8,6 +8,8 @@ const SpecialImg = ({ type }) => {
             return <Tornado className={type}/>
         case "volcano":
             return <Volcano className={type}/>
+        default: 
+            return <Volcano className={type}/>
       }
 }
 
